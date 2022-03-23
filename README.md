@@ -7,6 +7,29 @@ Use this template for all your "from scratch" deliverables. To start, simply run
 - `npm install`
 - `npm start`
 
+## Plan
+
+- views
+  1.Home
+  -basic welcome screen
+  2.Teams
+  *components
+  *teams(mapping through teams displaying them to page w/links...)
+  ...link
+  -teams/:id
+  *components
+  *positions(mapping through teams.positions displaying position: name w/links...)
+  ...link
+  -players/:id
+  *components
+  *player(display player.name any other info)
+  3.Players
+  *components
+  *playersList(mapping through players names and displaying them to the screen with links...)
+  ...link
+  -players/:id
+  \*player
+
 ## Available Scripts
 
 In the project directory, you can run:
