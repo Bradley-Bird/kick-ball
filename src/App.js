@@ -2,6 +2,7 @@ import './App.css';
 import Home from './views/Home';
 import Players from './views/Players';
 import Teams from './views/Teams';
+import TeamCard from './components/TeamCard';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
             <Players />
           </Route>
           <Route path="/teams/:id">
-            <Teams />
+            <TeamCard />
           </Route>
           <Route path="/teams">
             <Teams />
