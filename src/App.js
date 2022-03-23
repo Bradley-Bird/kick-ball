@@ -11,6 +11,9 @@ function App() {
           <Route path="/players">
             <Players />
           </Route>
+          <Route path="/teams/:id">
+            <Teams />
+          </Route>
           <Route path="/teams">
             <Teams />
           </Route>
