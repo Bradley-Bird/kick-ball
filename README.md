@@ -12,10 +12,10 @@ Use this template for all your "from scratch" deliverables. To start, simply run
 - views
   1.Home
   -basic welcome screen
-  2.Teams
-  *components
-  *teams(mapping through teams displaying them to page w/links...)
-  ...link
+  2.Teams-----
+  *components-------
+  *teams(mapping through teams displaying them to page w/links...)--------
+  ...link-----
   -teams/:id
   *components
   *positions(mapping through teams.positions displaying position: name w/links...)

@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchTeamId } from '../services/teams';
-
-function TeamCard() {
-  const params = useParams();
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchTeamId(params.id);
-      console.log(data);
-    };
-    fetchData();
-  }, [params.id]);
-
-  return <div>TeamCard</div>;
+function TeamCard({ teamInfo: { players } }) {
+  console.log(players);
+  return (
+    <div>
+      {players.map((player) => (
+        <p key={player.id}>
+          {player.position}: {player.name}
+        </p>
+      ))}
+    </div>
+  );
 }
 
 export default TeamCard;
