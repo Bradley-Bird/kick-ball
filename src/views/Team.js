@@ -9,11 +9,10 @@ function Team() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchTeamId(params.id);
-      console.log(data);
       setTeamInfo(data);
     };
     fetchData();
-  }, [params.id]);
+  }, [params]);
   return <TeamCard {...{ teamInfo }} />;
 }
 export default Team;

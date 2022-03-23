@@ -1,8 +1,9 @@
-function TeamCard({ teamInfo: { players } }) {
+function TeamCard({ teamInfo, teamInfo: { players } }) {
   console.log(players);
   return (
     <div>
-      {players.map((player) => (
+      <h2>{teamInfo.name}</h2>
+      {players?.map((player) => (
         <p key={player.id}>
           {player.position}: {player.name}
         </p>
