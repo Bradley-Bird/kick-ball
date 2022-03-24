@@ -1,5 +1,4 @@
 function TeamCard({ teamInfo, teamInfo: { players } }) {
-  console.log(players);
   return (
     <div>
       <h2>{teamInfo.name}</h2>

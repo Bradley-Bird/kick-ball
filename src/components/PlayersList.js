@@ -4,7 +4,7 @@ function PlayersList({ players }) {
   return (
     <div>
       {players.map((player) => (
-        <Link key={player.id} to={`/player/${player.id}`}>
+        <Link key={player.id} to={`/players/${player.id}`}>
           <p>{player.name}</p>
         </Link>
       ))}
