@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchPlayersId } from '../services/players';
 import { useParams } from 'react-router-dom';
 import PlayerCard from '../components/PlayerCard';
+import StyledContainer from '../components/styles/StyledContainer';
 
 function Player() {
   const [player, setPlayer] = useState({ teams: [] });
@@ -22,7 +23,13 @@ function Player() {
     fetchData();
   }, [params]);
   loading && <p>loading...</p>;
-  return error ? <p>{error.message}</p> : <PlayerCard player={player} />;
+  return error ? (
+    <p>{error.message}</p>
+  ) : (
+    <StyledContainer>
+      <PlayerCard player={player} />;
+    </StyledContainer>
+  );
 }
 
 export default Player;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import TeamCard from '../components/TeamCard';
 import { fetchTeamId } from '../services/teams';
+import StyledContainer from '../components/styles/StyledContainer';
 
 function Team() {
   const params = useParams();
@@ -21,6 +22,12 @@ function Team() {
     fetchData();
   }, [params]);
   loading && <p>Loading...</p>;
-  return error ? <p>{error}</p> : <TeamCard {...{ teamInfo }} />;
+  return error ? (
+    <p>{error}</p>
+  ) : (
+    <StyledContainer>
+      <TeamCard {...{ teamInfo }} />;
+    </StyledContainer>
+  );
 }
 export default Team;

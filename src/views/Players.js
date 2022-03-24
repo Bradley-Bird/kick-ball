@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchPlayers } from '../services/players';
 import PlayersList from '../components/PlayersList';
+import { StyledContainer } from '../components/styles/StyledContainer';
 
 function Players() {
   const [players, setPlayers] = useState([]);
@@ -19,7 +20,13 @@ function Players() {
     fetchData();
   }, []);
   loading && <p>Loading...</p>;
-  return error ? <p>{error.message}</p> : <PlayersList {...{ players }} />;
+  return error ? (
+    <p>{error.message}</p>
+  ) : (
+    <StyledContainer>
+      <PlayersList {...{ players }} />;
+    </StyledContainer>
+  );
 }
 
 export default Players;

@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
+import { StyledLink, StyledList } from '../components/styles/StyledContainer';
 
 function PlayersList({ players }) {
   return (
-    <div>
+    <StyledList>
       {players.map((player) => (
-        <Link key={player.id} to={`/players/${player.id}`}>
+        <StyledLink key={player.id} to={`/players/${player.id}`}>
           <p>{player.name}</p>
-        </Link>
+        </StyledLink>
       ))}
-    </div>
+    </StyledList>
   );
 }
 

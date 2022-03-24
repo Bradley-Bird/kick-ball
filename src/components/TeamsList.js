@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { StyledList, StyledLink } from './styles/StyledContainer';
 
 function TeamsList({ teams }) {
   return (
@@ -19,16 +18,4 @@ function TeamsList({ teams }) {
   );
 }
 
-const StyledList = styled.div``;
-
-const StyledLink = styled(Link)`
-  display: flex;
-  justify-content: flex-end;
-
-  p {
-    position: relative;
-    top: 5rem;
-    color: Black;
-  }
-`;
 export default TeamsList;

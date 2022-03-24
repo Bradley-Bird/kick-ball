@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
+import { StyledLink, StyledList } from '../components/styles/StyledContainer';
 
 function TeamCard({ teamInfo, teamInfo: { players } }) {
   return (
-    <div>
+    <StyledList>
       <h2>{teamInfo.name}</h2>
       {players.map((player) => (
-        <Link key={player.id} to={`/players/${player.id}`}>
+        <StyledLink key={player.id} to={`/players/${player.id}`}>
           <p>
             {player.position}: {player.name}
           </p>
-        </Link>
+        </StyledLink>
       ))}
-    </div>
+    </StyledList>
   );
 }
 

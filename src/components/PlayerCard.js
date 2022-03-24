@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { StyledLink, StyledList } from '../components/styles/StyledContainer';
 
 function PlayerCard({ player, player: { teams } }) {
   return (
-    <div>
+    <StyledList>
       <h2>{player.name}</h2>
       <p>{player.position}</p>
-      <Link to={`/teams/${teams.id}`}>
+      <StyledLink to={`/teams/${teams.id}`}>
         <p>{teams.name}</p>
-      </Link>
-    </div>
+      </StyledLink>
+    </StyledList>
   );
 }
 
