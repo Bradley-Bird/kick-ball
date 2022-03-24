@@ -11,7 +11,6 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Header />
-
       <Switch>
         <Route path="/players/:id">
           <Player />
