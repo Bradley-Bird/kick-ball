@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './views/Home';
 import Players from './views/Players';
+import Player from './views/Player';
 import Teams from './views/Teams';
 import Team from './views/Team';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -9,6 +10,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
+          <Route path="/players/:id">
+            <Player />
+          </Route>
           <Route path="/players">
             <Players />
           </Route>
