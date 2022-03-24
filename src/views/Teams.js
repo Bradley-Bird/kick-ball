@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import TeamsList from '../components/TeamsList';
 import { fetchTeams } from '../services/teams';
+import StyledContainer from '../components/styles/StyledContainer';
 
 function Teams() {
   const [teams, setTeams] = useState([]);
@@ -19,7 +20,10 @@ function Teams() {
     fetchData();
   }, [setError]);
   loading && <p>Loading...</p>;
-  return error ? <p>{error.message}</p> : <TeamsList {...{ teams }} />;
+  return (
+    <StyledContainer>
+      {error ? <p>{error.message}</p> : <TeamsList {...{ teams }} />}
+    </StyledContainer>
+  );
 }
-
 export default Teams;
