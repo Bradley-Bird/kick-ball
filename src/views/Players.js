@@ -4,19 +4,22 @@ import PlayersList from '../components/PlayersList';
 
 function Players() {
   const [players, setPlayers] = useState([]);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchPlayers();
-      setPlayers(data);
+      try {
+        const data = await fetchPlayers();
+        setPlayers(data);
+        setLoading(false);
+      } catch (e) {
+        setError('e.message');
+      }
     };
     fetchData();
   }, []);
-
-  return (
-    <div>
-      <PlayersList {...{ players }} />
-    </div>
-  );
+  loading && <p>Loading...</p>;
+  return error ? <p>{error.message}</p> : <PlayersList {...{ players }} />;
 }
 
 export default Players;

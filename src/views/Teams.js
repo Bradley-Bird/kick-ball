@@ -4,19 +4,22 @@ import { fetchTeams } from '../services/teams';
 
 function Teams() {
   const [teams, setTeams] = useState([]);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchTeams();
-      setTeams(data);
+      try {
+        const data = await fetchTeams();
+        setTeams(data);
+        setLoading(false);
+      } catch (e) {
+        setError(e.message);
+      }
     };
     fetchData();
-  }, []);
-
-  return (
-    <div>
-      <TeamsList {...{ teams }} />
-    </div>
-  );
+  }, [setError]);
+  loading && <p>Loading...</p>;
+  return error ? <p>{error.message}</p> : <TeamsList {...{ teams }} />;
 }
 
 export default Teams;
