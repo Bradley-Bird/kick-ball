@@ -4,11 +4,13 @@ import Players from './views/Players';
 import Player from './views/Player';
 import Teams from './views/Teams';
 import Team from './views/Team';
+import Nav from './components/Nav';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Nav />
         <Switch>
           <Route path="/players/:id">
             <Player />
