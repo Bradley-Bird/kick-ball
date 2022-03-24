@@ -5,6 +5,7 @@ import PlayerCard from '../components/PlayerCard';
 
 function Player() {
   const [player, setPlayer] = useState({ teams: [] });
+  const [error, setError] = useState('');
   const params = useParams();
   useEffect(() => {
     const fetchData = async () => {
@@ -14,12 +15,11 @@ function Player() {
             setPlayer(resp);
           }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => setError(error));
     };
     fetchData();
   }, [params]);
-
-  return player !== undefined && <PlayerCard player={player} />;
+  return error ? <p>{error.message}</p> : player !== undefined && <PlayerCard player={player} />;
 }
 
 export default Player;
