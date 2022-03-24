@@ -5,7 +5,7 @@ import { fetchTeamId } from '../services/teams';
 
 function Team() {
   const params = useParams();
-  const [teamInfo, setTeamInfo] = useState([]);
+  const [teamInfo, setTeamInfo] = useState({ players: [] });
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchTeamId(params.id);
