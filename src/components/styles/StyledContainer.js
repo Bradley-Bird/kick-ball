@@ -23,6 +23,7 @@ export const StyledList = styled.div`
     top: 5rem;
     right: 1rem;
     color: Black;
+    font-weight: 700;
   }
 `;
 

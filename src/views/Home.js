@@ -15,12 +15,14 @@ function Home() {
 
 const StyledVideo = styled.video`
   position: absolute;
-  top: 116px;
+  object-fit: cover;
+  top: 136px;
   width: 100%;
 `;
 
 const HomeContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
   h1 {
     position: absolute;

@@ -19,6 +19,7 @@ export const StyledNavLink = styled(NavLink)`
   height: 2rem;
   cursor: pointer;
   transform: scale(0.8);
+  z-index: 1000;
 
   h4 {
     position: absolute;
