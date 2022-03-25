@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './views/Header';
+import Home from './views/Home';
+import Players from './views/Players';
+import Player from './views/Player';
+import Teams from './views/Teams';
+import Team from './views/Team';
+import GlobalStyle from './components/styles/GlobalStyles';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalStyle />
+      <Header />
+      <Switch>
+        <Route path="/players/:id">
+          <Player />
+        </Route>
+        <Route path="/players">
+          <Players />
+        </Route>
+        <Route path="/teams/:id">
+          <Team />
+        </Route>
+        <Route path="/teams">
+          <Teams />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
